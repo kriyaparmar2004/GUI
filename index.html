@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARYA GUI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="images/arya_logo.webp" alt="arya_logo" class="arya_logo">
+        <div class="team-info">
+            <h1>TEAM DJS ARYA</h1> <br>
+            TEAM ID: 2015
+        </div>
+        
+        <img src="images/Flag_of_India.webp" alt="Flag_of_India" class="Flag_of_India">
+        
+</div>
+    <hr class="seperator">
+    <nav>
+        <div class="navbar">
+            <div class="mission_time">
+                <br>MISSION TIME:   
+                <div class="clock">
+                    <span id="hours">00</span><sub>HRS</sub> :
+                    <span id="minutes">00</span><sub>MINS</sub> :
+                    <span id="seconds">00</span><sub>SECS</sub>
+                  </div>
+            </div>
+            <div class="buttons">
+                <a href="#graphs">GRAPHS </a>
+                <a href="#csv">CSV </a>
+                <a href="#coordinates">COORDINATES </a>
+            </div>
+            <div class="action">
+                <img src="images/pause-button.png" alt="pause-button" class="pause-button">
+                <img src="images/play-button.png" alt="play button" class="play-button">
+                <img src="images/reload_button-removebg-preview.png" alt="reload button" class="reload-button">
+        </div>
+            <div class="packet_count">PACKET COUNT: <div class="count_">
+                <span id="count">0000</span>
+                
+                
+            </div>
+
+            </div>
+            
+        </div>
+    </nav>
+<div class="container_2">
+    <div class="map">
+        <iframe width="400" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.11799641524!2d72.93274687500517!3d19.14631154976185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b87a93df3bd1%3A0xc7214e12ae235302!2sKailash%20Complex%2C%20Kailas%20Complex%2C%20Lal%20Bahadur%20Shastri%20Marg%2C%20Valmik%20Nagar%2C%20Bhandup%20West%2C%20Mumbai%2C%20Maharashtra%20400078!5e0!3m2!1sen!2sin!4v1701622489409!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="data">
+        <div class="first-3">
+            <div class="button">ALTITUDE <br><hr class="horizontal_line">1234</div>
+            <div class="button">AIR SPEED <br><hr class="horizontal_line">
+                1234</div>
+            <div class="button">HS DEPLOYED <br><hr class="horizontal_line">
+                1234</div>
+            
+        </div>
+        <br>
+        <div class="first-3">
+            <div class="button">CMD ECHO <br><hr class="horizontal_line">
+                1234 </div>
+            <div class="button">GPS STATS <br><hr class="horizontal_line">
+                1234</div>
+            <div class="button">GPS LATITUDE <br><hr class="horizontal_line">
+                1234</div>
+            
+        </div>
+        <br>
+        <div class="first-3">
+            <div class="button">GPS TIME <br><hr class="horizontal_line">
+                1234 </div>
+            <div class="button">TEMPERATURE <br><hr class="horizontal_line">
+                1234</div>
+            <div class="button">PRESSURE <br><hr class="horizontal_line">
+                1234</div>
+            
+        </div>
+        <div class="first-3">
+            <div class="button">PC DEPLOYED <br><hr class="horizontal_line">
+                1234</div>
+            <div class="button">GPS LONGITUDE <br><hr class="horizontal_line">
+                1234</div>
+            <div class="button">VOLTAGE <br><hr class="horizontal_line">
+                1234</div>
+        </div>
+    </div>
+        <div class="modes">
+            <div class="state-button">MODE : F/S</div>
+            <p>SIMULATION MODE
+            <input type="checkbox" id="switch"
+            class="checkbox" />
+            <label for="switch" class="toggle">
+    
+            </label>
+            </p>
+            <!-- <div class="state-button">ENTER THE COMMAND -->
+                <div class="plus_enter">
+            <input type="text" name="command" class="command" placeholder="ENTER A COMMAND" ><button type="submit" aria-placeholder="ENTER"></button>
+            <button class="enter-btn">Enter</button>
+           </div>
+           <div class="state-button">COM :  </div>
+            <div class="state-button">MAX DRAFT: 1234</div>
+            <img src="images/speedometer-removebg-preview.png" alt="speedometer" class="speedometer">
+            <div class="state-button">AIR SPEED : 1234</div>
+        </div>
+</div>
+    <div class="time_line"><h3>SOFTWARE STATES :</h3>
+        <hr class="seperator">
+        <div class="time_box">
+        <div class="state-button1">LAUNCH</div>
+        <img src="images/arrow-removebg-preview.png" alt="arrow" class="arrow">
+        <div class="state-button1">ASCENT</div>
+        <img src="images/arrow-removebg-preview.png" alt="arrow" class="arrow">
+        <div class="state-button1">ROCKET SEPERATION</div>
+        <img src="images/arrow-removebg-preview.png" alt="arrow" class="arrow">
+        <div class="state-button1">HS RELEASE</div>
+        <img src="images/arrow-removebg-preview.png" alt="arrow" class="arrow">
+        <div class="state-button1">LANDED</div>
+    </div>
+</div>
+<div class="container_3">
+    <div class="graphs">
+        <div class="graph-container">
+            <canvas id="pressure_graph"></canvas>
+            <script src="pressure_graph.js"></script>
+        </div>
+        <div class="graph-container">
+            <canvas id="temp_graph"></canvas>
+            <script src="graph1.js"></script>
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>
